@@ -1,16 +1,13 @@
 import { useState } from "react";
 import "./App.css";
-import { Button } from "./components/Button";
-
-type Question = {
-  title: string;
-  subtitle: string;
-  score: number;
-};
+import { Question } from "./types/Question";
+import QuestionComponent from "./components/QuestionComponent";
+import ResultComponent from "./components/ResultComponent";
 
 function App() {
   const [pontuacao, setPontuacao] = useState(0);
   const [pergunta, setPergunta] = useState(0);
+  const [isShowingResult, setIsShowingResult] = useState(false);
 
   function getQuestion(): Question {
     if (pergunta === 0) {
@@ -69,8 +66,18 @@ function App() {
   }
 
   function onYes() {
+    if (pergunta === 6) {
+      setIsShowingResult(true);
+      return;
+    }
     setPontuacao(pontuacao + getQuestion().score);
     goToNextQuestion();
+  }
+
+  function restartQuestions() {
+    setPergunta(0);
+    setPontuacao(0);
+    setIsShowingResult(false);
   }
 
   return (
@@ -79,21 +86,19 @@ function App() {
     flex justify-center items-center min-h-screen
     "
     >
-      <div>
-        <p>
-          {getQuestion()?.title} (Pontuação: {getQuestion()?.score})
-        </p>
-        <p>{getQuestion()?.subtitle}</p>
-        <div className="flex justify-around items-center mt-20 gap-2">
-          <Button className="!bg-pink-400 w-full" onClick={goToNextQuestion}>
-            Não
-          </Button>
-          <Button className="!bg-green-600 w-full" onClick={onYes}>
-            Sim
-          </Button>
-        </div>
-        <p className="text-3xl text-green-600">{pontuacao}</p>
-      </div>
+      {pergunta === 6 ? (
+        <ResultComponent
+          score={pontuacao}
+          restartQuestions={restartQuestions}
+        />
+      ) : (
+        <QuestionComponent
+          getQuestion={getQuestion}
+          goToNextQuestion={goToNextQuestion}
+          onYes={onYes}
+          pontuacao={pontuacao}
+        />
+      )}
     </div>
   );
 }

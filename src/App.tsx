@@ -3,6 +3,8 @@ import "./App.css";
 import { Question } from "./types/Question";
 import QuestionComponent from "./components/QuestionComponent";
 import ResultComponent from "./components/ResultComponent";
+import { useWindowSize } from "react-use";
+import Confetti from "react-confetti";
 
 function App() {
   const [pontuacao, setPontuacao] = useState(0);
@@ -79,9 +81,11 @@ function App() {
     setPontuacao(0);
     setIsShowingResult(false);
   }
+  const { width, height } = useWindowSize();
 
   return (
     <div className="flex items-center justify-center min-h-screen ">
+      {pergunta === 6 && <Confetti width={width} height={height} />}
       {pergunta === 6 ? (
         <ResultComponent
           score={pontuacao}

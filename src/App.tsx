@@ -7,7 +7,7 @@ import ResultComponent from "./components/ResultComponent";
 function App() {
   const [pontuacao, setPontuacao] = useState(0);
   const [pergunta, setPergunta] = useState(0);
-  const [isShowingResult, setIsShowingResult] = useState(false);
+  const [, setIsShowingResult] = useState(false);
 
   function getQuestion(): Question {
     if (pergunta === 0) {
@@ -81,11 +81,7 @@ function App() {
   }
 
   return (
-    <div
-      className="
-    flex justify-center items-center min-h-screen
-    "
-    >
+    <div className="flex items-center justify-center min-h-screen ">
       {pergunta === 6 ? (
         <ResultComponent
           score={pontuacao}

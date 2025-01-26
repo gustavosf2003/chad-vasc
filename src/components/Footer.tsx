@@ -3,7 +3,7 @@ import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="flex justify-center flex-col items-center border-t text-12 tracking-[-0.24px] p-4">
+    <footer className="flex justify-center flex-col items-center border-t text-12 tracking-[-0.24px] p-4 z-50">
       <div className="flex space-x-4">
         <a
           href="https://www.linkedin.com/in/amanda-vicente1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"

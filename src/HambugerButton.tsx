@@ -1,17 +1,20 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 
-function HamburgerButton() {
-  const [open, setOpen] = useState<boolean>(false);
-
+function HamburgerButton({
+  open,
+  setOpen,
+}: {
+  open: boolean;
+  setOpen: () => void;
+}) {
   return (
     <Button
       className="group"
       variant="outline"
       size="icon"
-      onClick={() => setOpen((prevState) => !prevState)}
+      onClick={setOpen}
       aria-expanded={open}
       aria-label={open ? "Close menu" : "Open menu"}
     >

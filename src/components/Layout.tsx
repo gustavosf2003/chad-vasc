@@ -21,7 +21,7 @@ const Layout = ({
   currentPageName: string;
 }) => {
   return (
-    <div className="flex flex-col justify-between w-full min-h-screen">
+    <div className="relative flex flex-col justify-between w-full min-h-screen">
       <Navbar />
       <div className="items-center justify-center lg:flex">
         <div className="p-4 w-auto lg:w-[800px]">

@@ -17,11 +17,18 @@ function App() {
         </p>
         <div className="mt-4">
           <AnimatedList>
+            <NavLink to="/glasgow">
+              <Card
+                title="Glasgow"
+                rightText="~ 1.30 min"
+                description="O teste Glasgow Coma Scale (GCS) avalia o nível de consciência de pacientes com trauma cerebral, ajudando a determinar a gravidade da lesão"
+              />
+            </NavLink>
             <NavLink to="/chadvasc">
               <Card
                 title="ChadVasc"
                 rightText="~ 1 min"
-                description="O exame avalia o risco de AVC em fibrilação atrial, guiando a necessidade de anticoagulação preventiva"
+                description="O teste avalia o risco de AVC em fibrilação atrial, guiando a necessidade de anticoagulação preventiva"
               />
             </NavLink>
           </AnimatedList>

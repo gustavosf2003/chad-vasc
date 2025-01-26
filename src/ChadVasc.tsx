@@ -1,12 +1,13 @@
 import { useCallback, useState } from "react";
 import "./App.css";
-import QuestionComponent from "./components/QuestionComponent";
-import ResultComponent from "./components/ResultComponent";
+import QuestionComponent from "./components/ChadVasc/Question";
+
 import Layout from "./components/Layout";
-import { ChadVascQuestions } from "./lib/chadVasc";
+import { ChadVascQuestions, chadVascResultMessage } from "./lib/chadVasc";
+import ResultComponent from "./components/Result";
 
 function ChadVasc() {
-  const [pontuacao, setPontuacao] = useState(0);
+  const [score, setScore] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToNextQuestion = useCallback(() => {
@@ -15,14 +16,14 @@ function ChadVasc() {
 
   const onYes = useCallback(() => {
     if (currentIndex < ChadVascQuestions.length) {
-      setPontuacao((prev) => prev + ChadVascQuestions[currentIndex].score);
+      setScore((prev) => prev + ChadVascQuestions[currentIndex].score);
       goToNextQuestion();
     }
   }, [currentIndex, goToNextQuestion]);
 
   const restartQuestions = useCallback(() => {
     setCurrentIndex(0);
-    setPontuacao(0);
+    setScore(0);
   }, []);
 
   return (
@@ -32,8 +33,9 @@ function ChadVasc() {
     >
       {currentIndex >= ChadVascQuestions.length ? (
         <ResultComponent
-          score={pontuacao}
-          restartQuestions={restartQuestions}
+          restartTest={restartQuestions}
+          score={score}
+          text={chadVascResultMessage(score)}
         />
       ) : (
         <QuestionComponent

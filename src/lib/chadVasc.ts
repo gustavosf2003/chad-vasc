@@ -45,3 +45,13 @@ export const ChadVascQuestions: Question[] = [
     score: 1,
   },
 ];
+
+export const chadVascResultMessage = (score: number) => {
+  if (score === 0) {
+    return "Risco baixo, anticoagulação não indicada";
+  } else if (score === 1) {
+    return "Considerar anticoagulação oral após avaliação individualizada dos riscos e benefícios";
+  } else {
+    return "Anticoagulação oral recomendada";
+  }
+};

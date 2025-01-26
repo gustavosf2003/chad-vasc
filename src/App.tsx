@@ -20,7 +20,7 @@ function App() {
             <NavLink to="/glasgow">
               <Card
                 title="Glasgow"
-                rightText="~ 1.30 min"
+                rightText="~ 2 min"
                 description="O teste Glasgow Coma Scale (GCS) avalia o nível de consciência de pacientes com trauma cerebral, ajudando a determinar a gravidade da lesão"
               />
             </NavLink>

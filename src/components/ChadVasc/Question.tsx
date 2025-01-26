@@ -1,15 +1,15 @@
-import { Question } from "@/types/Question";
-import { Button } from "./ui/button";
+import { Question as QuestionType } from "@/types/Question";
+import { Button } from "../ui/button";
 import { ChadVascQuestions } from "@/lib/chadVasc";
 import { RefreshCcw } from "react-feather";
 
-const QuestionComponent = ({
+const Question = ({
   question,
   goToNextQuestion,
   restartQuestions,
   onYes,
 }: {
-  question: Question;
+  question: QuestionType;
   goToNextQuestion: () => void;
   restartQuestions: () => void;
   onYes: () => void;
@@ -47,4 +47,4 @@ const QuestionComponent = ({
   </div>
 );
 
-export default QuestionComponent;
+export default Question;

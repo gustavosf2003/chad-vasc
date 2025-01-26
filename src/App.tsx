@@ -3,11 +3,11 @@ import "./App.css";
 import { Question } from "./types/Question";
 import QuestionComponent from "./components/QuestionComponent";
 import ResultComponent from "./components/ResultComponent";
+import Layout from "./components/Layout";
 
 function App() {
   const [pontuacao, setPontuacao] = useState(0);
   const [pergunta, setPergunta] = useState(0);
-  const [, setIsShowingResult] = useState(false);
 
   function getQuestion(): Question {
     if (pergunta === 0) {
@@ -67,7 +67,6 @@ function App() {
 
   function onYes() {
     if (pergunta === 6) {
-      setIsShowingResult(true);
       return;
     }
     setPontuacao(pontuacao + getQuestion().score);
@@ -77,11 +76,9 @@ function App() {
   function restartQuestions() {
     setPergunta(0);
     setPontuacao(0);
-    setIsShowingResult(false);
   }
-
   return (
-    <div className="flex items-center justify-center min-h-screen ">
+    <Layout className="items-center justify-center">
       {pergunta === 6 ? (
         <ResultComponent
           score={pontuacao}
@@ -95,7 +92,7 @@ function App() {
           pontuacao={pontuacao}
         />
       )}
-    </div>
+    </Layout>
   );
 }
 

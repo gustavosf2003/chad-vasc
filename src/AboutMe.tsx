@@ -1,4 +1,5 @@
 import Layout from "./components/Layout";
+import Amanda from "@/assets/amanda.png";
 
 export default function AboutMe() {
   return (
@@ -21,7 +22,7 @@ export default function AboutMe() {
           </p>
         </div>
         <div className="flex justify-end">
-          <img src="/amanda.png" alt="Dra. Amanda Vicente" className="w-80" />
+          <img src={Amanda} alt="Dra. Amanda Vicente" className="w-80" />
         </div>
       </div>
     </Layout>

@@ -1,4 +1,4 @@
-import { Button } from "./Button";
+import { Button } from "./ui/button";
 
 const ResultComponent = ({
   score,
@@ -21,7 +21,9 @@ const ResultComponent = ({
     <div>
       <p>{`Score: ${score}`}</p>
       <p>{getAnticoagulationRecommendation()}</p>
-      <Button onClick={restartQuestions}>Refazer teste</Button>
+      <Button onClick={restartQuestions} className="mt-10" variant="secondary">
+        Refazer teste
+      </Button>
     </div>
   );
 };

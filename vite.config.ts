@@ -9,7 +9,9 @@ export default defineConfig({
     VitePWA({
       registerType: "autoUpdate", // Automatically updates the service worker
       includeAssets: ["favicon.ico", "robots.txt", "apple-touch-icon.png"], // Static assets for the app
+
       manifest: {
+        id: "/",
         name: "Dra. Amanda Vicente", // Full name of your app
         short_name: "Amanda Vicente", // Shorter name for homescreen icons
         description: "Dashboard clínico da Dra. Amanda Vicente", // App description
@@ -33,7 +35,20 @@ export default defineConfig({
             src: "/pwa-512x512.png",
             sizes: "512x512",
             type: "image/png",
-            purpose: "any maskable",
+          },
+        ],
+        screenshots: [
+          {
+            src: "/screenshot.png", // Replace with the actual screenshot paths
+            sizes: "1080x1920", // Resolution of the image
+            type: "image/png",
+            form_factor: "wide", // Set the form factor (e.g., wide or narrow)
+          },
+          {
+            src: "/screenshot.png",
+            sizes: "1080x1920",
+            type: "image/png",
+            form_factor: "narrow",
           },
         ],
       },

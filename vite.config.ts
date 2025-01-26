@@ -8,11 +8,39 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      devOptions: {
-        enabled: true,
-        type: "module",
+      registerType: "autoUpdate",
+      includeAssets: ["favicon.ico", "robots.txt", "apple-touch-icon.png"],
+      manifest: {
+        name: "My Vite PWA App",
+        short_name: "VitePWA",
+        description: "A Vite + React + TS Progressive Web App",
+        theme_color: "#ffffff",
+        icons: [
+          {
+            src: "pwa-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+          {
+            src: "pwa-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+          },
+          {
+            src: "pwa-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "any maskable",
+          },
+        ],
       },
     }),
+    // VitePWA({
+    //   devOptions: {
+    //     enabled: true,
+    //     type: "module",
+    //   },
+    // }),
   ],
   resolve: {
     alias: {

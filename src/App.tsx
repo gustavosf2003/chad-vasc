@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import "./App.css";
 import Layout from "./components/Layout";
 
@@ -7,7 +8,9 @@ function App() {
       className="flex flex-col items-center justify-center"
       currentPageName=""
     >
-      <a href="/chadvasc">ChadVasc</a>
+      <NavLink to="/chadvasc" end>
+        ChadVasc
+      </NavLink>
     </Layout>
   );
 }

@@ -1,3 +1,4 @@
+import { RefreshCcw } from "react-feather";
 import { Button } from "./ui/button";
 
 const ResultComponent = ({
@@ -18,10 +19,15 @@ const ResultComponent = ({
   };
 
   return (
-    <div>
+    <div className="w-80">
       <p>{`Score: ${score}`}</p>
       <p>{getAnticoagulationRecommendation()}</p>
-      <Button onClick={restartQuestions} className="mt-10" variant="secondary">
+      <Button
+        variant="secondary"
+        className="flex gap-2 mt-10 text-xs"
+        onClick={restartQuestions}
+      >
+        <RefreshCcw width={12} strokeWidth={2.5} className="animate-spin" />
         Refazer teste
       </Button>
     </div>

@@ -33,16 +33,16 @@ const QuestionComponent = ({
         )}
       </div>
       <div className="mt-5 min-h-10">
-        <p className="font-bold">{question.category}</p>
-        <ul className="mt-5 space-y-3">
+        <p className="text-xl font-medium">{question.category}</p>
+        <ul className="mt-5 space-y-4">
           {question.options.map((option, index) => (
             <li key={index}>
               <Button
                 onClick={() => onSelectOption(option.score)}
-                className="w-full text-left"
+                className="w-full py-6 text-left"
                 variant="outline"
               >
-                {option.label}
+                {option.label}asdads
               </Button>
             </li>
           ))}

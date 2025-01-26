@@ -6,8 +6,8 @@ import { NavLink } from "react-router";
 
 function App() {
   return (
-    <Layout className="" currentPageName="">
-      <div className="flex flex-col gap-2">
+    <Layout className="justify-center " currentPageName="">
+      <div className="flex flex-col gap-2  w-[800px]">
         <h2 className="max-w-xl text-3xl tracking-tighter text-left md:text-5xl font-regular">
           Dashboard clínico
         </h2>

@@ -16,7 +16,7 @@ function ChadVasc() {
 
   const onYes = useCallback(() => {
     if (currentIndex < ChadVascQuestions.length) {
-      setScore((prev) => prev + ChadVascQuestions[currentIndex].score);
+      setScore((prev) => prev + (ChadVascQuestions[currentIndex].score ?? 0));
       goToNextQuestion();
     }
   }, [currentIndex, goToNextQuestion]);

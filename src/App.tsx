@@ -15,7 +15,7 @@ function App() {
           Ferramentas rápidas e precisas para apoiar suas decisões clínicas no
           dia a dia
         </p>
-        <div className="mt-4">
+        <div className="my-4">
           <AnimatedList>
             <NavLink to="/glasgow" key="glasgow">
               <Card
@@ -40,8 +40,8 @@ function App() {
             </NavLink>
             <NavLink to="/ckd" key="ckd">
               <Card
-                title="CKD-EPI"
-                rightText="~ 1 min"
+                title="Taxa de Filtração Glomerular"
+                rightText="~ 1:30 min"
                 description="Avalie a função renal do seu paciente com base em um questionário rápido e preciso"
               />
             </NavLink>

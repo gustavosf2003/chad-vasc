@@ -77,6 +77,7 @@ const Question = ({
         {question.type === "number" && (
           <Input
             ref={inputRef}
+            inputMode="decimal"
             type="number"
             className="p-2 mt-2 border rounded"
             onChange={handleInputChange}

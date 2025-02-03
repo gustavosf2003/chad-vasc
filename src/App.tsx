@@ -45,6 +45,13 @@ function App() {
                 description="Avalie a função renal do seu paciente com base em um questionário rápido e preciso"
               />
             </NavLink>
+            <NavLink to="/cid" key="cid">
+              <Card
+                title="CID - 10"
+                rightText=""
+                description="Busque por códigos CID-10 e encontre informações detalhadas sobre cada um deles"
+              />
+            </NavLink>
           </AnimatedList>
         </div>
       </div>

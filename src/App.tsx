@@ -17,18 +17,32 @@ function App() {
         </p>
         <div className="mt-4">
           <AnimatedList>
-            <NavLink to="/glasgow">
+            <NavLink to="/glasgow" key="glasgow">
               <Card
                 title="Glasgow"
                 rightText="~ 2 min"
                 description="O teste Glasgow Coma Scale (GCS) avalia o nível de consciência de pacientes com trauma cerebral, ajudando a determinar a gravidade da lesão"
               />
             </NavLink>
-            <NavLink to="/chadvasc">
+            <NavLink to="/chadvasc" key="chadvasc">
               <Card
                 title="ChadVasc"
                 rightText="~ 1 min"
                 description="O teste avalia o risco de AVC em fibrilação atrial, guiando a necessidade de anticoagulação preventiva"
+              />
+            </NavLink>
+            <NavLink to="/cardiovascular" key="cardiovascular">
+              <Card
+                title="Cardiovascular"
+                rightText="~ 1 min"
+                description="Avalie o risco cardiovascular do seu paciente com base em um questionário rápido e preciso"
+              />
+            </NavLink>
+            <NavLink to="/ckd" key="ckd">
+              <Card
+                title="CKD-EPI"
+                rightText="~ 1 min"
+                description="Avalie a função renal do seu paciente com base em um questionário rápido e preciso"
               />
             </NavLink>
           </AnimatedList>

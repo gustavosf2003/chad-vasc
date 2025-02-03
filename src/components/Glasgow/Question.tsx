@@ -42,7 +42,7 @@ const QuestionComponent = ({
                 className="w-full py-6 text-left"
                 variant="outline"
               >
-                {option.label}asdads
+                {option.label}
               </Button>
             </li>
           ))}

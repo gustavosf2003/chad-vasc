@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CID_DATA } from "./lib/cid";
+// import { CID_DATA } from "./lib/cid";
 import { DocumentDuplicateIcon } from "@heroicons/react/24/outline";
 
 interface ResultType {
@@ -22,17 +22,15 @@ function CardiovascularRiskTest() {
   ) => {
     e.preventDefault();
     // Função para normalizar e limpar caracteres especiais
-    const normalizeString = (str: string) =>
-      str
-        .normalize("NFD") // Normaliza o texto, separando caracteres acentuados
-        .replace(/[\u0300-\u036f]/g, "") // Remove acentos
-        .replace(/[^a-zA-Z0-9\s]/g, "") // Remove caracteres especiais (não alfanuméricos)
-        .toLowerCase(); // Coloca tudo em minúsculas para uma busca insensível a maiúsculas/minúsculas
+    // const normalizeString = (str: string) =>
+    //   str
+    //     .normalize("NFD") // Normaliza o texto, separando caracteres acentuados
+    //     .replace(/[\u0300-\u036f]/g, "") // Remove acentos
+    //     .replace(/[^a-zA-Z0-9\s]/g, "") // Remove caracteres especiais (não alfanuméricos)
+    //     .toLowerCase(); // Coloca tudo em minúsculas para uma busca insensível a maiúsculas/minúsculas
 
     // Use filter instead of find to get all matching items
-    const foundItems = CID_DATA.data.filter((item) =>
-      normalizeString(item.nome).includes(normalizeString(searchTerm))
-    );
+    const foundItems = [] as ResultType[];
 
     setResults(foundItems);
   };

@@ -11,11 +11,13 @@ import Cardiovascular from "./Cardiovascular.tsx";
 import CKDTest from "./CKD.tsx";
 import CID from "./Cid.tsx";
 import { ToastProvider } from "./context/toast.tsx";
+import { Analytics } from "@vercel/analytics/react";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <ToastProvider>
+        <Analytics />
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/chadvasc" element={<ChadVasc />} />
